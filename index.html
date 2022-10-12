@@ -4,28 +4,27 @@
 <h1>Análisis y Diseño de sistemas 2</h1>
 <h3>Grupo número 3</h3>
 
-<h2>JavaScript Geolocation</h2>
+<h2>JavaScript Geolocalizacion</h2>
 
-<p>Click the button to get your coordinates.</p>
+<p>Obtener coordinadas.</p>
 
-<button onclick="getLocation()">Try It</button>
+<button onclick="getCurrentLocation()">Try It</button>
 
 <p id="demo"></p>
 
 <script>
 const x = document.getElementById("demo");
 
-function getLocation() {
+function getCurrentLocation() {
   try {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(displayPosition);
   } catch {
     x.innerHTML = err;
   }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+function displayPosition(position) {
+  x.innerHTML = "Latitud: " + position.coords.latitude + "<br>Longitud: " + position.coords.longitude;
 }
 </script>
 
